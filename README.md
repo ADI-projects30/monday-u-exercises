@@ -8,7 +8,7 @@ This is going to be so much fun! Here are a few general details:
 # 👋 Welcome to: Let's Work!
 
 # Instructions:
-Entering a task is done by pressing the plus button, when a task is added a "success" sound will be heard.
+Entering a task is done by pressing the plus button, when a task is added a "success" sound will be heard..
 
 Each task can be marked as completed or it can be deleted. If you choose to delete a task, you will hear a sound announcing the deletion.
 
