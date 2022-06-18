@@ -16,9 +16,13 @@ If there's an attempt to enter an empty task, a pop up message will appear. The 
 
 ## Exercises list
 
-**Exercise 1** - [HTML, CSS, JS.](https://github.com/monday-u-com/monday-u-exercises/tree/master/src/ex1)
+**Exercise 1** - [HTML, CSS, JS.](https://github.com/monday-u-com/monday-u-exercises/tree/main/src/ex1)
 
-**Exercise 2** - [In depth JS, Async JS, MVC](https://github.com/monday-u-com/monday-u-exercises/tree/master/src/ex2)
+**Exercise 2** - [In depth JS, Async JS, MVC](https://github.com/monday-u-com/monday-u-exercises/tree/main/src/ex2)
+
+**Exercise 3** - [Advance Node.js, CLI](https://github.com/monday-u-com/monday-u-exercises/tree/main/src/ex3)
+
+**Exercise 4** - [Express.js](https://github.com/monday-u-com/monday-u-exercises/tree/main/src/ex4)
 
 # Submitting your tasks
 Create a pull request in your forked repository and send to your mentor when it's ready.
