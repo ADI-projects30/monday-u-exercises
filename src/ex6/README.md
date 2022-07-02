@@ -2,6 +2,10 @@
 
 Let's get Reactive 🥳
 
+# Start the app
+
+Run the command: "npm run dev" from the server folder .
+
 ## In this section you will practice
 
 **Initializing React project** - Use [create-react-app](https://github.com/facebook/create-react-app) to set up a basic React application
