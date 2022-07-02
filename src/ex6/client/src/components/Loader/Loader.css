@@ -1,0 +1,73 @@
+.loader {
+    position: relative;
+  }
+  
+  .size-xs {
+    width: 16px;
+    height: 16px;
+  }
+  .size-small {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .size-medium {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .size-large {
+    width: 64px;
+    height: 64px;
+  }
+  
+  .state-primary {
+    stroke: var(--primary-color);
+  }
+  
+  .state-dark {
+    stroke: var(--primary-text-color);
+  }
+  
+  .state-secondary {
+    stroke: var(--secondary-text-color);
+  }
+  
+  .state-onColor {
+    stroke: var(--text-color-on-primary);
+  }
+  
+  .circle-loader-spinner {
+    animation: rotate 1s linear infinite;
+    position: absolute;
+    top: 50%;
+    left: 400%;
+    margin-top: 200%;
+    margin-left: -140%;
+  }
+  
+  .circle-loader-spinner {
+    stroke-linecap: round;
+    animation: dash 1s infinite;
+  }
+  
+  @keyframes dash {
+    0% {
+      stroke-dasharray: 1, 150;
+      stroke-dashoffset: 0;
+    }
+    50% {
+      stroke-dasharray: 90, 150;
+      stroke-dashoffset: -35;
+    }
+    100% {
+      stroke-dasharray: 90, 150;
+      stroke-dashoffset: -124;
+    }
+  }
+  
+  @keyframes rotate {
+    100% {
+      transform: rotate(360deg);
+    }
+  }

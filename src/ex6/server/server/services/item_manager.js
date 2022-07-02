@@ -1,5 +1,5 @@
-const PokemonClient = require('../clients/pokemon_client');
-const { Item } = require('../db/models');
+const PokemonClient = require("../clients/pokemon_client");
+const { Item } = require("../db/models");
 
 class ItemManager {
   constructor() {
@@ -10,35 +10,39 @@ class ItemManager {
     const items = await Item.findAll({
       raw: true,
     });
-    return items.map(item => {
+    return items.map((item) => {
       return {
         id: item.id,
         name: item.itemName,
-        status: item.status
+        status: item.status,
       };
     });
   };
 
-  handleItem = async item => {
-    if (this._isNumber(item)) { return await this.fetchAndAddPokemon(item); }
-    if (this._isList(item)) { return await this.fetchAndAddManyPokemon(item); }
+  handleItem = async (item) => {
+    if (this._isNumber(item)) {
+      return await this.fetchAndAddPokemon(item);
+    }
+    if (this._isList(item)) {
+      return await this.fetchAndAddManyPokemon(item);
+    }
 
     await this.addItem(item);
   };
 
-  updateItem = async item => {
-    await Item.update({ status: item.status }, { where: { id: item.id } });
+  updateItem = async (item) => {
+    await Item.update({ status: !item.status }, { where: { id: item.id } });
   };
 
-  addItem = async item => {
+  addItem = async (item) => {
     await Item.create({ itemName: item });
   };
 
-  addPokemonItem = async pokemon => {
+  addPokemonItem = async (pokemon) => {
     await this.addItem(`Catch ${pokemon.name}`);
   };
 
-  fetchAndAddPokemon = async pokemonId => {
+  fetchAndAddPokemon = async (pokemonId) => {
     try {
       const pokemon = await this.pokemonClient.getPokemon(pokemonId);
       await this.addPokemonItem(pokemon);
@@ -47,26 +51,30 @@ class ItemManager {
     }
   };
 
-  fetchAndAddManyPokemon = async inputValue => {
+  fetchAndAddManyPokemon = async (inputValue) => {
     try {
-      const pokemons = await this.pokemonClient.getManyPokemon(inputValue.replace("/ /g", "").split(","));
-      pokemons.forEach(this.addPokemonItem);
+      const pokemons = await this.pokemonClient.getManyPokemon(
+        inputValue.replace("/ /g", "").split(",")
+      );
+      await Promise.all(pokemons.map(this.addPokemonItem));
     } catch (error) {
       console.error(error);
-      await this.addItem(`Failed to fetch pokemon with this input: ${inputValue}`);
+      await this.addItem(
+        `Failed to fetch pokemon with this input: ${inputValue}`
+      );
     }
   };
 
-  deleteItem = async item => {
+  deleteItem = async (item) => {
     await Item.destroy({
       where: {
-        id: item.id
-      }
+        id: item.id,
+      },
     });
   };
 
-  _isNumber = value => !isNaN(Number(value));
-  _isList = value => value.split(",").every(this._isNumber);
+  _isNumber = (value) => !isNaN(Number(value));
+  _isList = (value) => value.split(",").every(this._isNumber);
 }
 
 module.exports = new ItemManager();
