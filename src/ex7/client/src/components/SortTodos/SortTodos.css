@@ -1,0 +1,9 @@
+.monday-style-button-group-component__option-text:not(.disabled).selected {
+  color: plum;
+}
+
+.list-item-filter {
+    align-items: center;
+    padding: 20px;
+  }
+
