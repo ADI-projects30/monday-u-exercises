@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="app-name"
+>
+  <h1
+    aria-label=""
+    className="heading-component element-type-h1 size-large"
+    id=""
+  >
+    TodoApp
+  </h1>
+</div>
+`;

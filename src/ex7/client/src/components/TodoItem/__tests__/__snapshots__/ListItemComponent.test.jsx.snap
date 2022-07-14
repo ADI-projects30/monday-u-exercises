@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshot test ListItem renders correctly 1`] = `
+<li
+  className="list-item"
+>
+  <input
+    checked={false}
+    className="list-item-checkbox"
+    id={33}
+    name="done"
+    type="checkbox"
+    value="done"
+  />
+  <p
+    className="list-item-text"
+  >
+    See a movie
+  </p>
+  <img
+    alt="delete"
+    className="list-item-delete-button"
+    src="delete_icon.svg"
+  />
+</li>
+`;
