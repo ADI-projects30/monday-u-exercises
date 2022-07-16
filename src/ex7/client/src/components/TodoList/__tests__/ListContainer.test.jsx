@@ -38,7 +38,6 @@ describe("ListContainer", () => {
 
     );
 
-    // TODO: test that both items are rendered at the list
     const linkElement = screen.getByText(/Take dog out for a walk/i);
     const linkElement2 = screen.getByText(/Do the dishes/i);
     expect(linkElement).toBeInTheDocument();
