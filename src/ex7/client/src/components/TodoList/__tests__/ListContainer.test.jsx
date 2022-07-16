@@ -22,7 +22,7 @@ const items = [
 
 describe("ListContainer", () => {
   test("should render both items (one done and one not)", () => {
-    const Mock = () =>{
+    const AddTodosMock = () =>{
         const dispatch = useDispatch();
         items.forEach((todo) => {
           dispatch(addTodo(todo));
@@ -32,7 +32,7 @@ describe("ListContainer", () => {
     render(
 
       <Provider store={store}>
-       <Mock/>
+       <AddTodosMock/>
         <TodoList todosList={items} />
       </Provider>
 
