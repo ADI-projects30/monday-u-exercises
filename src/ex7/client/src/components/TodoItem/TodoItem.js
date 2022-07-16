@@ -23,11 +23,7 @@ const TodoItem = ({
         change={handleTodoStatusUpdate}
       ></Checkbox>
       <p className="list-item-text">{name}</p>
-      <Button
-        type="img"
-        delete_icon={delete_icon}
-        click={handleTodoDelete}
-      ></Button>
+      <Button type="img" delete_icon={delete_icon} click={handleTodoDelete} />
     </li>
   );
 };

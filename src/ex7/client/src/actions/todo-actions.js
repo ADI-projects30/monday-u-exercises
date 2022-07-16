@@ -21,7 +21,7 @@ export const removeTodo = (item) => ({
   item,
 });
 
-export const loadtodosListAction = () => {
+export const loadTodosListAction = () => {
   return async (dispatch) => {
     const response = await ListApiService.getItems();
     dispatch(getTodos(response));
@@ -54,7 +54,7 @@ export const addTodoAction = (item) => {
   };
 };
 
-export const removetodoAction = (item) => {
+export const removeTodoAction = (item) => {
   return async (dispatch) => {
     await ListApiService.deleteItem(item);
     dispatch(removeTodo(item));

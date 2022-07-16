@@ -10,15 +10,15 @@ import SortTodos from "../SortTodos/SortTodos";
 import filterTodosOptions from "../FilterTodosOptions/FilterTodosOptions";
 import "./TodoList.css";
 import {
-  loadtodosListAction,
-  removetodoAction,
+  loadTodosListAction,
+  removeTodoAction,
   updateItemAction,
 } from "../../actions/todo-actions";
 
 const TodoList = ({
   todosList,
-  removetodoAction,
-  loadtodosListAction,
+  removeTodoAction,
+  loadTodosListAction,
   updateItemAction,
 }) => {
   const [isLoading, setIsLoading] = useState(false);
@@ -26,8 +26,8 @@ const TodoList = ({
   const [filterStatusValue, setFilterStatusValue] = useState("");
 
   const loadTodos = useCallback(async () => {
-    await loadtodosListAction();
-  }, [loadtodosListAction]);
+    await loadTodosListAction();
+  }, [loadTodosListAction]);
 
   useEffect(() => {
     setIsLoading(true);
@@ -37,9 +37,9 @@ const TodoList = ({
 
   const handleTodoDelete = useCallback(
     async (todo) => {
-      removetodoAction(todo);
+      removeTodoAction(todo);
     },
-    [removetodoAction]
+    [removeTodoAction]
   );
 
   const handleFilterTodos = useCallback((value) => {
@@ -114,8 +114,8 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch, ownProps) => {
   return bindActionCreators(
     {
-      loadtodosListAction,
-      removetodoAction,
+      loadTodosListAction,
+      removeTodoAction,
       updateItemAction,
     },
     dispatch
